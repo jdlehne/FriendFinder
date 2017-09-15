@@ -1,0 +1,30 @@
+{
+  "name": "friend_finder",
+  "version": "1.0.0",
+  "description": "App using Express, Node, JS to create a site which  will take in results from your users' surveys, then compare their answers with those from other users. The app will then display the name and picture of the user with the best overall match.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jdlehne/FriendFinder.git"
+  },
+  "keywords": [
+    "node",
+    "javascript",
+    "express",
+    "api",
+    "server"
+  ],
+  "author": "josh lehne",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jdlehne/FriendFinder/issues"
+  },
+  "homepage": "https://github.com/jdlehne/FriendFinder#readme",
+  "dependencies": {
+    "express": "^4.15.4",
+    "fs": "0.0.1-security"
+  }
+}
