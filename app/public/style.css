@@ -5,6 +5,7 @@ body {
   background-color:#333;
   background-image: url("/style/cheesedix.png");
   background-size: cover;
+  background-position: center;
 }
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
