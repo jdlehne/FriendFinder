@@ -18,16 +18,16 @@
 
     <h1 id="surveyHead">All About You</h1>
 
-    <h3>Your Name (We need this)</h3>
+    <h4>Your Name (We need this)</h4>
     <input type="text" name="" id="name" class="form-control" required="">
 
-    <h3>Link to your profile photo (We also need this)</h3>
+    <h4>Link to your profile photo (We also need this)</h4>
     <input type="text" name="" id="photo" class="form-control" required="">
 
 
     <div class="row marketing">
       <div class="col-lg-6">
-        <h3>Question 1</h3>
+        <h4>Question 1</h4>
         <p>I consider myself a morning person.</p>
         <select data-placeholder="" class="chosen-select" id="q1">
         <option value=""></option>
@@ -39,7 +39,7 @@
       </select>
         <hr>
 
-        <h3>Question 2</h3>
+        <h4>Question 2</h4>
         <p>I enjoy reading books.</p>
         <select data-placeholder="" class="chosen-select" id="q2">
         <option value=""></option>
@@ -51,7 +51,7 @@
       </select>
         <hr>
 
-        <h3>Question 3</h3>
+        <h4>Question 3</h4>
         <p>I enjoy drinking alcohol socially.</p>
         <select data-placeholder="" class="chosen-select" id="q3">
         <option value=""></option>
@@ -63,7 +63,7 @@
       </select>
         <hr>
 
-        <h3>Question 4</h3>
+        <h4>Question 4</h4>
         <p>I am more of a cat person than a dog person.</p>
         <select data-placeholder="" class="chosen-select" id="q4">
         <option value=""></option>
@@ -75,7 +75,7 @@
       </select>
         <hr>
 
-        <h3>Question 5</h3>
+        <h4>Question 5</h4>
         <p>Having a college degree is important to me.</p>
         <select data-placeholder="" class="chosen-select" id="q5">
         <option value=""></option>
@@ -89,7 +89,7 @@
       </div>
 
       <div class="col-lg-6">
-        <h3>Question 6</h3>
+        <h4>Question 6</h4>
         <p>I'm down with the clown.</p>
         <select data-placeholder="" class="chosen-select" id="q6">
         <option value=""></option>
@@ -101,7 +101,7 @@
       </select>
         <hr>
 
-        <h3>Question 7</h3>
+        <h4>Question 7</h4>
         <p>I prefer staying home to going out.</p>
         <select data-placeholder="" class="chosen-select" id="q7">
         <option value=""></option>
@@ -113,7 +113,7 @@
       </select>
         <hr>
 
-        <h3>Question 8</h3>
+        <h4>Question 8</h4>
         <p>I travel often wether for work or pleasure.</p>
         <select data-placeholder="" class="chosen-select" id="q8">
         <option value=""></option>
@@ -125,7 +125,7 @@
       </select>
         <hr>
 
-        <h3>Question 9</h3>
+        <h4>Question 9</h4>
         <p>I handle myself well under extreme pressure.</p>
         <select data-placeholder="" class="chosen-select" id="q9">
         <option value=""></option>
@@ -137,7 +137,7 @@
       </select>
         <hr>
 
-        <h3>Question 10</h3>
+        <h4>Question 10</h4>
         <p>I have never told a lie.</p>
         <select data-placeholder="" class="chosen-select" id="q10">
         <option value=""></option>
@@ -154,10 +154,10 @@
     <div id="bottomNav">
       <div class="row marketing">
         <div class="col-lg-6">
-          <h3><a href ="/all">Api Friends List</a></h3>
-          <h3><a href ="https://github.com/jdlehne/FriendFinder">GitHub</a></h3>
-          <h3><a href="/">Home</a></h3>
-          <h3><a href ="http://www.wikihow.com/Stay-Good-Friends">Keep your new buddy</a><h3>
+          <h4><a href ="/all">Api Friends List</a></h4>
+          <h4><a href ="https://github.com/jdlehne/FriendFinder">GitHub</a></h4>
+          <h4><a href="/">Home</a></h4>
+          <h4><a href ="http://www.wikihow.com/Stay-Good-Friends">Keep your new buddy</a><h4>
         </div>
       </div>
     </div>
@@ -187,6 +187,7 @@
 
         console.log("Hello there, you've clicked a submit button!");
 
+        //--Form validation used from Friend Finder example--//
         function validateForm() {
           var isValid = true;
           $('.form-control').each(function() {
@@ -221,6 +222,7 @@
           };
 
           var currentURL = window.location.origin;
+          console.log(currentURL + "/api/survey");
 
           $.post(currentURL + "/api/survey", userData,
             function(data) {

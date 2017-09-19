@@ -13,24 +13,25 @@ module.exports = function(app) {
 });
 
 //==========https://expressjs.com/en/guide/routing.html===========//
-
-
   app.post("/api/survey", function(req, res) {
+    //console.log("Logging request id: " + req.body.name)//----debug to check incoming response name
+    //console.log(friendData); //----debug to check full array of incoming people data from friends.js
+    var bestMatch = {};//---Empty object to be filled be closest mathematical match based on answers
+    var highDifference = 50;//--Largest gulf of difference for 10 (5)pt questions
 
-    console.log("Logging request body: " + req.body.name)
-  //console.log(friendData);
-    var bestMatch = {};
-    var highDifference = 50;
+    for (i = 0; i < friendData.length; i++) {//---Loops through all objects in friends.js
 
-    for (i = 0; i < friendData.length; i++) {
+      var totalDifference = 0;//---Declares and sets the totalDifference to be empty for now
 
-      var totalDifference = 0;
+      for (var j = 0; j < 10; j++) {//---Loops through all 10 stored survey numbers and compares them
+        var difference = Math.abs(req.body.numbers[j] - friendData[i].numbers[j]);//--sets a new difference
+        //--TBD by the "absoulte differece" between the incoming scores and the stored numbers of friend objects
+        totalDifference = totalDifference + difference//--sets the totalDifference to hold the resulting math
 
-      for (var j = 0; j < 10; j++) {
-        var difference = Math.abs(req.body.numbers[j] - friendData[i].numbers[j]);
-        totalDifference = totalDifference + difference
+        //=====Debug show culmative score as loops through questions====//
         //console.log("Total Difference between "+ friendData[i].name +" : " + totalDifference);
-        if (totalDifference < highDifference) {
+
+        if (totalDifference < highDifference) {//
           highDifference = totalDifference;
           bestMatch = friendData[i];
         }
@@ -38,7 +39,9 @@ module.exports = function(app) {
       }
 
     }
-    res.json(bestMatch);
+    res.json(bestMatch);//---Sends the match back to Post
+    //console.log("Displaying below best match object from friends.js");
+    //----Logging to check proper object was returned---
     //console.log(bestMatch);
   });
 }
