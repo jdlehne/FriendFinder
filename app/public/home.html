@@ -11,11 +11,12 @@
     <link rel="stylesheet" type="text/css" href="style.css" />
   </head>
   <body>
-    <div class="container">
+    <div class="container" id="bg">
       <div class="jumbotron"  id="bootstrap-overrides">
         <h1>Friend Finder</h1>
         <p class="lead">Take our quick survey and see who you find.</p>
         <p><a href="/survey" class="btn btn-primary btn-lg active" role="button" aria-pressed="true" >Take the Survey</a></p>
+        <p>Friends Visited: <span id="pageHits"></span></p>
       </div>
       <div class="row marketing">
         <div class="col-lg-6">
@@ -27,5 +28,15 @@
         <p>&copy;Josh Lehne 2017 </p>
       </div>
     </div>
+    <script>
+  $(function() {
+    var currentURL = window.location.origin;
+    console.log(currentURL);
+    $.get(currentURL + '/hits', (data) => {
+      $("#pageHits").text(data.hits);
+      console.log(data.hits);
+    });
+  });
+</script>
   </body>
 </html>
